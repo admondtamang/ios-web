@@ -1,20 +1,21 @@
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import { capitalizeFirstLetter } from "../../utils/stringManipulation";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { ModalContext } from "../../context/modalContext";
 
 type Props = { link: string; img: string; name: string };
 
 const Icon = ({ link, img, name }: Props) => {
   const router = useRouter();
 
+  const { setLink, setModal } = useContext(ModalContext);
+
   function handleClick(link: string) {
-    router.push({
-      pathname: "previewApp",
-      query: { link },
-    });
+    setLink(link);
+    setModal(true);
   }
   return (
     <motion.li

@@ -123,10 +123,10 @@ const Footer = (props: Props) => {
   };
 
   return (
-    <footer className="fixed bottom-0 flex h-[15vh] w-full items-center justify-center bg-amber-500 p-8 py-4 md:h-[20vh] ">
+    <footer className="fixed bottom-0 flex h-[15vh] w-full items-center justify-center p-8 py-4 md:h-[20vh] ">
       {showModal && <Modal />}
 
-      <ul className="md-p-0 grid h-full w-full grid-cols-4 gap-8 md:gap-20">
+      <ul className="grid h-full w-full grid-cols-4 items-center justify-center gap-8 rounded-3xl md:gap-20 md:p-0">
         {Array.isArray(data) &&
           data
             .slice(0, 4)

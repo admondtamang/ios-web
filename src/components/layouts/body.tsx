@@ -37,7 +37,7 @@ const Body = (props: Props) => {
 
         return (
           <SwiperSlide key={i}>
-            <ul className="grid h-[80vh] w-full grid-cols-4 gap-8 bg-slate-400 p-8 text-center md:h-[75vh] md:grid-cols-5 md:gap-20 lg:grid-cols-6">
+            <ul className="grid h-[80vh] w-full grid-cols-4 gap-8 p-8 text-center md:h-[75vh] md:grid-cols-5 md:gap-20 lg:grid-cols-6">
               {Array.isArray(data) &&
                 data
                   .slice(i * per_page, count)

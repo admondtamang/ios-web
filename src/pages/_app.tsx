@@ -15,9 +15,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <UserContext.Provider value={{}}>
-        {/* <AnimateSharedLayout type="crossfade"> */}
-        <Component {...pageProps} />
-        {/* </AnimateSharedLayout> */}
+        <AnimateSharedLayout>
+          <Component {...pageProps} />
+        </AnimateSharedLayout>
       </UserContext.Provider>
     </SessionProvider>
   );

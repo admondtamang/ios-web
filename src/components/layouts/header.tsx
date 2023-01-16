@@ -48,7 +48,7 @@ const Header = (props: Props) => {
         <Battery />
         <span className="flex gap-1">
           <p>{systemInfo?.battery?.charging ? <Charge /> : null}</p>
-          <p>{systemInfo?.battery?.level * 100 + " "}%</p>
+          <p>{(systemInfo?.battery?.level * 100).toFixed() + " "}%</p>
         </span>
       </div>
     </header>
