@@ -15,34 +15,44 @@ type Props = {};
 
 const Body = (props: Props) => {
   const total_apps = data.length;
-  const per_page = 10;
+  const per_page = 16;
 
   const total_page = Math.ceil(total_apps / per_page);
-  console.log(total_page);
+  let count = 0;
 
   return (
     <Swiper
       slidesPerView={1}
-      spaceBetween={30}
+      spaceBetween={10}
       pagination={{
         clickable: true,
       }}
       navigation={true}
       modules={[Pagination, Navigation]}
-      className="mySwiper"
+      className="swiper"
     >
-      {Array.from({ length: total_page }).map((el, i) => (
-        <SwiperSlide key={i}>
-          <ul className="flex gap-20 p-8">
-            {Array.isArray(data) &&
-              data.slice(i * total_page, total_apps).map((row, i) => (
-                <li key={i}>
-                  <Icon img={row.img} link={row.link} name={row.name} />
-                </li>
-              ))}
-          </ul>
-        </SwiperSlide>
-      ))}
+      {Array.from({ length: total_page }).map((el, i) => {
+        count = count + per_page;
+        console.log(i * per_page, count);
+
+        return (
+          <SwiperSlide key={i}>
+            <ul className="grid h-[80vh] w-full grid-cols-4 gap-8 bg-slate-400 p-8 text-center md:h-[75vh] md:grid-cols-5 md:gap-20 lg:grid-cols-6">
+              {Array.isArray(data) &&
+                data
+                  .slice(i * per_page, count)
+                  .map((row, i) => (
+                    <Icon
+                      img={row.img}
+                      link={row.link}
+                      name={row.name}
+                      key={i}
+                    />
+                  ))}
+            </ul>
+          </SwiperSlide>
+        );
+      })}
     </Swiper>
   );
   return (

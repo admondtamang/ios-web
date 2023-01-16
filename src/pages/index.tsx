@@ -15,7 +15,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-      //  className="bg-[url('https://cdn.wallpapersafari.com/91/24/EzfZxa.jpg')]"
+        className="bg-slate-500"
+        //  className="bg-[url('https://cdn.wallpapersafari.com/91/24/EzfZxa.jpg')]"
       >
         <Header />
         <Body />

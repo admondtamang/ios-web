@@ -32,7 +32,7 @@ const Header = (props: Props) => {
   var ampm = hours >= 12 ? "PM" : "AM";
 
   return (
-    <header className="sticky top-0 flex justify-between p-2 ">
+    <header className="sticky top-0 z-50 flex h-[5vh] justify-between  p-2">
       <div className="flex gap-2">
         <Wifi />
         {/* <p>{systemInfo.connectionType}</p> */}

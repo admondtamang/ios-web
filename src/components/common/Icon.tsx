@@ -18,25 +18,21 @@ const Icon = ({ link, img, name }: Props) => {
   }
   return (
     <motion.li
-      className="cursor-pointer"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
+      onClick={() => handleClick(link)}
+      className="flex cursor-pointer flex-col items-center justify-center gap-1 self-start"
     >
-      <div
-        onClick={() => handleClick(link)}
-        className="flex flex-col justify-center gap-1"
-      >
-        <Image
-          src={img}
-          className="max-h-[80px] w-[80px]"
-          alt="..."
-          width="80"
-          height="80"
-        />
-        <label className="text-center" htmlFor={name}>
-          {capitalizeFirstLetter(name)}
-        </label>
-      </div>
+      <Image
+        src={img}
+        className="mb-1 max-h-[60px] min-w-[60px] object-contain md:max-h-[80px] md:min-w-[80px]"
+        alt="..."
+        width="80"
+        height="80"
+      />
+      <label className="text-center font-normal" htmlFor={name}>
+        {capitalizeFirstLetter(name)}
+      </label>
     </motion.li>
   );
 };

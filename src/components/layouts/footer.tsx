@@ -26,8 +26,83 @@ export const data = [
     name: "d",
   },
   {
+    link: "https://globfone.com/call-phone/",
+    img: "/img/Phone.ico",
+    name: "phone",
+  },
+  {
     link: "www.facebook.com",
     img: "/img/Messages.ico",
+    name: "Messages",
+  },
+  {
+    link: "https://globfone.com/call-phone/",
+    img: "/img/Home.ico",
+    name: "Home",
+  },
+  {
+    link: "https://globfone.com/call-phone/",
+    img: "/img/Phone.ico",
+    name: "d",
+  },
+  {
+    link: "www.facebook.com",
+    img: "/img/Messages.ico",
+    name: "ds",
+  },
+  {
+    link: "https://globfone.com/call-phone/",
+    img: "/img/Home.ico",
+    name: "ds",
+  },
+  {
+    link: "https://globfone.com/call-phone/",
+    img: "/img/Phone.ico",
+    name: "phone",
+  },
+  {
+    link: "www.facebook.com",
+    img: "/img/Messages.ico",
+    name: "Messages",
+  },
+  {
+    link: "https://globfone.com/call-phone/",
+    img: "/img/Home.ico",
+    name: "Home",
+  },
+  {
+    link: "https://globfone.com/call-phone/",
+    img: "/img/Phone.ico",
+    name: "d",
+  },
+  {
+    link: "https://globfone.com/call-phone/",
+    img: "/img/Phone.ico",
+    name: "phone",
+  },
+  {
+    link: "www.facebook.com",
+    img: "/img/Messages.ico",
+    name: "Messages",
+  },
+  {
+    link: "https://globfone.com/call-phone/",
+    img: "/img/Home.ico",
+    name: "Home",
+  },
+  {
+    link: "https://globfone.com/call-phone/",
+    img: "/img/Phone.ico",
+    name: "d",
+  },
+  {
+    link: "www.facebook.com",
+    img: "/img/Messages.ico",
+    name: "ds",
+  },
+  {
+    link: "https://globfone.com/call-phone/",
+    img: "/img/Home.ico",
     name: "ds",
   },
   {
@@ -48,16 +123,16 @@ const Footer = (props: Props) => {
   };
 
   return (
-    <footer className="row pulse animated fixed bottom-0">
+    <footer className="fixed bottom-0 flex h-[15vh] w-full items-center justify-center bg-amber-500 p-8 py-4 md:h-[20vh] ">
       {showModal && <Modal />}
 
-      <ul className="flex gap-20 py-4 px-16">
+      <ul className="md-p-0 grid h-full w-full grid-cols-4 gap-8 md:gap-20">
         {Array.isArray(data) &&
-          data.map((row, i) => (
-            <li key={i}>
-              <Icon img={row.img} link={row.link} name={row.name} />
-            </li>
-          ))}
+          data
+            .slice(0, 4)
+            .map((row, i) => (
+              <Icon img={row.img} link={row.link} name={row.name} key={i} />
+            ))}
 
         {/* <li>
           <Link href="www.facebook.com">
